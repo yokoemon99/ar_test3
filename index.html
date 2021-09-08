@@ -1,47 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+        <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+        <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <div id="test">
+            <h3>test</h3>
+        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>テスト3！</title>
-
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
-    <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
-    <style>
-        #Twitter {
-            height: 1000px;
-            width: 1000px;
-            z-index: -50;
-            font-size: 500%;
-            background-color: #FFF;
-        }
-    </style>
-
-</head>
-
-<body>
-    <div id ="twitter">
-        <h3>test</h3>
-    </div>
-    <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
-
-
-        <a-marker preset="hiro">
-
-            
-            <!--<a-entity rotation="-90 0 0" geometry="primitive:plane;width:1.6;height:2.32;" material="shader:gif;src:url(img/akemasite3.gif);" gif="" transparent="true"></a-entity>-->
-            <a-plane width="1" height="1" rotation="-90 0 0" material="shader:html; target: #twitter"></a-plane>
-        </a-marker>
-        <a-entity camera></a-entity>
-
-    </a-scene>
-
-</body>
-
+        <a-scene embedded arjs='debugUIEnabled:false;' vr-mode-ui="enabled: false">
+            <a-marker preset="hiro">
+                <a-plane width="1" height="1" rotation="-90 0 0" material="shader:html; target: #test"></a-plane>
+            </a-marker>
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
 </html>
